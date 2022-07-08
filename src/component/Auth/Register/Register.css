@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 .register {
-    height: 50vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@
     justify-content: center;
     padding: 2rem;
     width: 500px;
-    height: 680px;
+    height: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

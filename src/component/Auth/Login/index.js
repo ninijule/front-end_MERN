@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import notification from "../helper/notification";
+import notification from "../../../helper/notification";
 import "./Login.css"
-import axios from "../api/axios";
+import axios from "../../../api/axios";
 
 const Login = () => {
 

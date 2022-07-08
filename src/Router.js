@@ -6,10 +6,10 @@ import {
 
 import { ToastContainer } from 'react-toastify';
 
-import NavBar from "./component/NavBar";
-import Home from "./component/Home";
-import Login from "./component/Login";
-import Register from "./component/Register";
+import NavBar from "./component/NavBar/NavBar";
+import Home from "./component/General/Dashboard/Home";
+import Login from "./component/Auth/Login/";
+import Register from "./component/Auth/Register";
 
 import 'react-toastify/dist/ReactToastify.css';
 

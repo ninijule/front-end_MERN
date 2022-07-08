@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-import axios from "../api/axios";
-import notification from "../helper/notification";
+import axios from "../../../api/axios";
+import notification from "../../../helper/notification";
 
 
 const Register = () => {
@@ -23,11 +23,11 @@ const Register = () => {
         }
 
         setError(false);
-        
+
 
         await axios.post("/register", JSON.stringify({ name, email, password, password_confirmation })).then((result) => {
             console.log(result)
-            
+
             if (result.status == 200) {
                 notification.show("You have successfully registered", "success", "bottom-center").show();
                 setTimeout(() => {
@@ -38,7 +38,7 @@ const Register = () => {
         }).catch((err) => {
             notification.show(err.message, "error", "bottom-center").show();
             setError(err.message);
-            
+
         })
 
     }
@@ -50,7 +50,7 @@ const Register = () => {
                 <div className="form-group">
                     <form onSubmit={onHandle}>
                         <div className="input-container">
-                        <label htmlFor="nameInput"> Name </label>
+                            <label htmlFor="nameInput"> Name </label>
                             <input type="text" id="user" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
                             <label htmlFor="emailInput"> Email </label>
                             <input type="email" id="user" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
