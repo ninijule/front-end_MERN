@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.login {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .form-layout {
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.login .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+}
+
+.login .form-layout .input-container label {
+    display: inline-block;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #063c6e;
+    margin-top: 10px;
+}
+
+.login .form-layout .input-container input {
+    display: flex;
+    margin-top: 10px;
+    height: 40px;
+    width: 300px;
+    padding: 0.3rem;
+    font-size: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.login .form-layout .input-container ::placeholder {
+    color: #525555c2;
+    font-size: 15px;
+}
+
+.login .form-layout .form-group .submit-container button {
+    display: flex;
+    font-size: 16px;
+    border-radius: 35px;
+    background-color: #063c6e;
+    color: white;
+    border: none;
+    height: 45px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 220px;
+    margin-right: auto;
+    align-items: center;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    outline: transparent 2px solid;
+}
+
+.login .form-layout .form-group .submit-container button:hover {
+    background-color: white;
+    color: #063c6e;
+    font-weight: bold;
+    cursor: pointer;
+    outline-color: rgba(6, 60, 110, 1);
+}
