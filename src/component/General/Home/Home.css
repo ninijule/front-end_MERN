@@ -1,0 +1,10 @@
+.home p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    position: absolute;
+    margin-top: 250px;
+    
+}

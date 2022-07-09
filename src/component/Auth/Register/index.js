@@ -29,14 +29,13 @@ const Register = () => {
             if (result.status === 200) {
                 notification.show("You have successfully registered", "success", "bottom-center");
                 setTimeout(() => {
-                    navigate("/signin");
+                    navigate("/dashboard");
                 }, 5000)
 
             }
         }).catch((err) => {
-            notification.show(err.message, "error", "bottom-center");
-            setError(err.message);
-
+            notification.show(err.response.data.errors, "error", "bottom-center");
+            setError(err.response.data.errors);
         })
 
     }

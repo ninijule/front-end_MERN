@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .register .form-layout {
@@ -15,7 +16,6 @@
     justify-content: center;
     padding: 2rem;
     width: 500px;
-    height: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -72,6 +72,8 @@
     outline-color: rgba(6, 60, 110, 1);
 }
 
-.register .error p {
+.register .error {
     color: red;
+    font-size: 15px;
+    font-weight: bold;
 }

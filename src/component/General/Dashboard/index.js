@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../../context/AuthContext";
@@ -11,17 +10,18 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const { loggedIn } = useContext(AuthContext);
     const [userData, setuserData] = useState({});
+
     const getUser = useCallback(async () => {
         const user = await axios.get("/user");
         setuserData(user.data);
     }, []);
 
     useEffect(() => {
-        if (loggedIn === false) {
-            navigate("/signin");
-        }
+        // if (loggedIn === false) {
+        //     navigate("/signin");
+        // }
         getUser();
-    }, [loggedIn, navigate, getUser]);
+    }, [loggedIn, getUser]);
 
     return (
         <div className="dashboard">

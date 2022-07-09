@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import notification from "../../../helper/notification";
 import "./Login.css"
 import axios from "../../../api/axios";
+import AuthContext from "../../../context/AuthContext";
+
 
 const Login = () => {
 
     let navigate = useNavigate();
     const [user, setUser] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
+    const { loggedIn } = useContext(AuthContext);
+
+    useEffect(() => {
+        if (loggedIn === true) {
+            navigate("/dashboard");
+        }
+    })
 
     const onHandle = async (e) => {
         e.preventDefault();
@@ -23,7 +32,7 @@ const Login = () => {
                 case 200:
                     notification.show("You have successfully registered", "success", "bottom-center");
                     setTimeout(() => {
-                        navigate("/dashboard");
+                        navigate(0);
                     }, 3000)
                     break;
                 default:
