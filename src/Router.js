@@ -1,9 +1,4 @@
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-} from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 
 import NavBar from "./component/NavBar/NavBar";
@@ -18,7 +13,7 @@ function Router() {
         <NavBar />
         <ToastContainer limit={1} />
         <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/signin" element={<Login />} />
             <Route path="/signup" element={<Register />} />
         </Routes>

@@ -18,22 +18,31 @@ const Login = () => {
         const password = user.password;
 
         await axios.post("/login", { email, password }).then((result) => {
-            console.log(result)
-
-            if (result.status == 200) {
-                notification.show("You have successfully registered", "success", "bottom-center").show();
-                setTimeout(() => {
-                    navigate("/signin");
-                }, 5000)
-
+            console.log("result")
+            switch (result.status) {
+                case 200:
+                    notification.show("You have successfully registered", "success", "bottom-center");
+                    setTimeout(() => {
+                        navigate("/dashboard");
+                    }, 3000)
+                    break;
+                default:
+                    notification.show("Something went wrong", "error", "bottom-center");
+                    setError("Something went wrong");
+                    break;
             }
         }).catch((err) => {
-            notification.show(err.message, "error", "bottom-center").show();
-            setError(err.message);
-
-        })
-
-
+            switch (err.response.status) {
+                case 401:
+                    notification.show("Invalid email or password", "error", "bottom-center");
+                    setError("Invalid email or password");
+                    break;
+                default:
+                    notification.show("Something went wrong", "error", "bottom-center");
+                    setError("Something went wrong");
+                    break;
+            }
+        });
     }
 
     return (
@@ -63,7 +72,6 @@ const Login = () => {
             </div>
         </div>
     );
-
 }
 
 export default Login;

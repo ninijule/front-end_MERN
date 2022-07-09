@@ -23,20 +23,18 @@ const Register = () => {
         }
 
         setError(false);
-
-
         await axios.post("/register", JSON.stringify({ name, email, password, password_confirmation })).then((result) => {
             console.log(result)
 
             if (result.status == 200) {
-                notification.show("You have successfully registered", "success", "bottom-center").show();
+                notification.show("You have successfully registered", "success", "bottom-center");
                 setTimeout(() => {
                     navigate("/signin");
                 }, 5000)
 
             }
         }).catch((err) => {
-            notification.show(err.message, "error", "bottom-center").show();
+            notification.show(err.message, "error", "bottom-center");
             setError(err.message);
 
         })
