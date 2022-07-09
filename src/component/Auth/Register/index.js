@@ -26,7 +26,7 @@ const Register = () => {
         await axios.post("/register", JSON.stringify({ name, email, password, password_confirmation })).then((result) => {
             console.log(result)
 
-            if (result.status == 200) {
+            if (result.status === 200) {
                 notification.show("You have successfully registered", "success", "bottom-center");
                 setTimeout(() => {
                     navigate("/signin");
