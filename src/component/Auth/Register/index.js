@@ -29,7 +29,7 @@ const Register = () => {
             if (result.status === 200) {
                 notification.show("You have successfully registered", "success", "bottom-center");
                 setTimeout(() => {
-                    navigate("/dashboard");
+                    navigate("/signin");
                 }, 5000)
 
             }

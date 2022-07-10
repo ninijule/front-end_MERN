@@ -14,7 +14,9 @@ const NavBar = () => {
                     <Link to="/"><h1>Questionary</h1></Link>
                 </div>
                 <div className="links">
-                    <Link to="/">Home</Link>
+                    {loggedIn === true && (<>
+                        <Link to="/dashboard">Home</Link>
+                    </>)}
                     <Link to="/about">About</Link>
                     <Link to="/signup">Signup</Link>
                     <Link to="/signin">Signin</Link>
